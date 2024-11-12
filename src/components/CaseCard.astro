@@ -1,0 +1,68 @@
+---
+import thinArrowRrightBlack from '../../public/icons/thin-arrow-right-black.svg'
+import thinArrowRrightWhite from '../../public/icons/thin-arrow-right-white.svg'
+import Image from 'astro/components/Image.astro'
+
+export interface ICaseCard {
+	chips: string[]
+	title: string
+	link: string
+}
+
+interface Props extends ICaseCard {}
+
+const { title, link, chips } = Astro.props
+---
+
+<a
+	href={link}
+	class="rounded-40 border-light-grey-2 bg-light-grey-1 case-card flex h-[300px] w-full cursor-pointer flex-col justify-between border p-5 transition md:w-[350px] md:even:translate-y-16"
+>
+	<div class="flex flex-1 flex-col">
+		<div class="mb-4 flex flex-wrap gap-1">
+			{
+				chips?.length &&
+					chips.map((chip) => {
+						return (
+							<span class="chip border-dark-grey-2 text-dark-grey-2 rounded-20 flex items-center justify-center border px-3 py-1.5 transition">
+								{chip}
+							</span>
+						)
+					})
+			}
+		</div>
+		<span class="title text-title-1-medium transition">{title}</span>
+	</div>
+	<div class="flex w-full items-center justify-end">
+		<div class="arrow-container bg-light-grey-2 rounded-20 flex items-center justify-center px-5 py-1 transition">
+			<Image src={thinArrowRrightBlack} alt={title} class="arrow-black h-[32px] w-[32px] transition" />
+			<Image src={thinArrowRrightWhite} alt={title} class="arrow-white hidden h-[32px] w-[32px] transition" />
+		</div>
+	</div>
+</a>
+
+<style>
+	.case-card:hover {
+		@apply bg-dark-grey-2 border-dark-grey-3;
+
+		& .chip {
+			@apply text-white border-white;
+		}
+
+		& .title {
+			@apply text-white;
+		}
+
+		& .arrow-container {
+			@apply bg-dark-grey-4;
+		}
+
+		& .arrow-white {
+			@apply block;
+		}
+
+		& .arrow-black {
+			@apply hidden;
+		}
+	}
+</style>

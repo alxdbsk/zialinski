@@ -1,0 +1,30 @@
+---
+import Footer from '../components/Footer.astro'
+
+interface Props {
+	title: string
+}
+
+const { title } = Astro.props
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width" />
+		<link rel="icon" type="image/png" href="/icons/favicon.png" />
+		<meta name="generator" content={Astro.generator} />
+		<title>{title}</title>
+	</head>
+	<body class="flex min-h-screen w-full flex-col items-center justify-between overflow-y-auto">
+		<main class="flex w-full flex-1 justify-center">
+			<slot />
+		</main>
+		<Footer />
+	</body>
+</html>
+
+<style is:global>
+	@import '../../public/styles/styles.css';
+</style>
