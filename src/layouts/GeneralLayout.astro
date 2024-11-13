@@ -4,10 +4,10 @@ import Footer from '../components/Footer.astro'
 interface Props {
 	title: string
 	bgClass: string
-	footerTheme: 'light' | 'dark'
+	theme: 'light' | 'dark'
 }
 
-const { title, bgClass, footerTheme } = Astro.props
+const { title, bgClass, theme } = Astro.props
 ---
 
 <!doctype html>
@@ -23,7 +23,7 @@ const { title, bgClass, footerTheme } = Astro.props
 		<main class="flex w-full flex-1 flex-col-reverse items-center md:flex-col">
 			<slot />
 		</main>
-		<Footer theme={footerTheme} />
+		<Footer theme={theme} />
 	</body>
 </html>
 
