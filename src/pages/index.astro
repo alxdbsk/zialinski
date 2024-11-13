@@ -49,15 +49,15 @@ const cases: ICaseCard[] = [
 ]
 ---
 
-<GeneralLayout title="Home" bgClass="bg-white" footerTheme="black">
-	<div class="gap-30 py-30 container flex w-full flex-col">
+<GeneralLayout title="Home" bgClass="bg-white" footerTheme="light">
+	<div class="container flex w-full flex-col gap-30 py-30">
 		<section class="flex">
 			<div class="flex h-[100px] w-[100px] overflow-hidden rounded-[20px]">
 				<Image
 					src={Photo}
 					alt="Piotr Zialinski"
 					title="Piotr Zialinski"
-					class="scale-200 -scale-x-200 max-h-full max-w-full translate-y-2 object-cover"
+					class="max-h-full max-w-full translate-y-2 scale-200 -scale-x-200 object-cover"
 				/>
 			</div>
 		</section>
@@ -67,7 +67,7 @@ const cases: ICaseCard[] = [
 			</h3>
 
 			<span>
-				<a href="/cv" target="_self" class="text-title-3-light cursor-pointer underline">View CV</a>
+				<a href="/cv" target="_self" class="cursor-pointer text-title-3-light underline">View CV</a>
 			</span>
 		</section>
 
