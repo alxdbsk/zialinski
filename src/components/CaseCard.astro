@@ -16,7 +16,7 @@ const { title, link, chips } = Astro.props
 
 <a
 	href={link}
-	class="rounded-40 border-light-grey-2 bg-light-grey-1 case-card flex h-[300px] w-full cursor-pointer flex-col justify-between border p-5 transition md:w-[350px] md:even:translate-y-16"
+	class="case-card flex h-[300px] w-full cursor-pointer flex-col justify-between rounded-40 border border-light-grey-2 bg-light-grey-1 p-5 transition md:w-[350px] md:even:translate-y-16"
 >
 	<div class="flex flex-1 flex-col">
 		<div class="mb-4 flex flex-wrap gap-1">
@@ -24,7 +24,7 @@ const { title, link, chips } = Astro.props
 				chips?.length &&
 					chips.map((chip) => {
 						return (
-							<span class="chip border-dark-grey-2 text-dark-grey-2 rounded-20 flex items-center justify-center border px-3 py-1.5 transition">
+							<span class="chip flex items-center justify-center rounded-20 border border-dark-grey-2 px-3 py-1.5 text-dark-grey-2 transition">
 								{chip}
 							</span>
 						)
@@ -34,7 +34,7 @@ const { title, link, chips } = Astro.props
 		<span class="title text-title-1-medium transition">{title}</span>
 	</div>
 	<div class="flex w-full items-center justify-end">
-		<div class="arrow-container bg-light-grey-2 rounded-20 flex items-center justify-center px-5 py-1 transition">
+		<div class="arrow-container flex items-center justify-center rounded-20 bg-light-grey-2 px-5 py-1 transition">
 			<Image src={thinArrowRrightBlack} alt={title} class="arrow-black h-[32px] w-[32px] transition" />
 			<Image src={thinArrowRrightWhite} alt={title} class="arrow-white hidden h-[32px] w-[32px] transition" />
 		</div>
@@ -43,10 +43,10 @@ const { title, link, chips } = Astro.props
 
 <style>
 	.case-card:hover {
-		@apply bg-dark-grey-2 border-dark-grey-3;
+		@apply border-dark-grey-3 bg-dark-grey-2;
 
 		& .chip {
-			@apply text-white border-white;
+			@apply border-white text-white;
 		}
 
 		& .title {

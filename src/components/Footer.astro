@@ -1,7 +1,19 @@
 ---
+interface Props {
+	theme: 'light' | 'dark'
+}
 
+const { theme } = Astro.props
 ---
 
-<footer class="bor border-dark-grey-2 container w-full border-t border-opacity-10 py-5 opacity-75">
-	<span class="text-description-2-regular"> Copyright © 2024 Piotr Zialinski. All rights reserved. </span>
+<footer
+	class="container w-full border-t border-opacity-10 py-5"
+	class:list={[{ 'border-dark-grey-2': theme === 'light' }, { 'border-white': theme === 'dark' }]}
+>
+	<span
+		class="text-description-2-regular"
+		class:list={[{ 'text-dark-grey-2 opacity-75': theme === 'light' }, { 'text-white opacity-50': theme === 'dark' }]}
+	>
+		Copyright © 2024 Piotr Zialinski. All rights reserved.
+	</span>
 </footer>

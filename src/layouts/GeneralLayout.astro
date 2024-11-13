@@ -3,9 +3,11 @@ import Footer from '../components/Footer.astro'
 
 interface Props {
 	title: string
+	bgClass: string
+	footerTheme: 'light' | 'dark'
 }
 
-const { title } = Astro.props
+const { title, bgClass, footerTheme } = Astro.props
 ---
 
 <!doctype html>
@@ -17,11 +19,11 @@ const { title } = Astro.props
 		<meta name="generator" content={Astro.generator} />
 		<title>{title}</title>
 	</head>
-	<body class="flex min-h-screen w-full flex-col items-center justify-between overflow-y-auto">
-		<main class="flex w-full flex-1 justify-center">
+	<body class="flex min-h-screen w-full flex-col items-center justify-between overflow-y-auto" class:list={[bgClass]}>
+		<main class="flex w-full flex-1 flex-col-reverse items-center md:flex-col">
 			<slot />
 		</main>
-		<Footer />
+		<Footer theme={footerTheme} />
 	</body>
 </html>
 

@@ -30,12 +30,27 @@ const cases: ICaseCard[] = [
 		title: 'Project Surgery',
 		link: '/',
 		chips: ['Health Tech', 'WEB', 'AR']
+	},
+	{
+		title: 'Project Surgery1',
+		link: '/',
+		chips: ['Health Tech', 'WEB', 'AR']
+	},
+	{
+		title: 'Project Surgery2',
+		link: '/',
+		chips: ['Health Tech', 'WEB', 'AR']
+	},
+	{
+		title: 'test',
+		link: '/',
+		chips: ['Health Tech', 'WEB', 'AR']
 	}
 ]
 ---
 
-<GeneralLayout title="Home">
-	<div class="bg-white gap-30 py-30 container flex w-full flex-col">
+<GeneralLayout title="Home" bgClass="bg-white" footerTheme="black">
+	<div class="gap-30 py-30 container flex w-full flex-col">
 		<section class="flex">
 			<div class="flex h-[100px] w-[100px] overflow-hidden rounded-[20px]">
 				<Image
@@ -52,7 +67,7 @@ const cases: ICaseCard[] = [
 			</h3>
 
 			<span>
-				<a href="" target="_self" class="text-title-3-light cursor-pointer underline">View CV</a>
+				<a href="/cv" target="_self" class="text-title-3-light cursor-pointer underline">View CV</a>
 			</span>
 		</section>
 

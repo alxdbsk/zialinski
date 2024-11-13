@@ -1,0 +1,62 @@
+---
+import Image from 'astro/components/Image.astro'
+import { ImageMetadata } from 'astro'
+
+interface Props {
+	theme: 'dark' | 'light'
+	title: string
+	link: string
+	darkIconLeftSrc?: ImageMetadata
+	darkIconRightSrc?: ImageMetadata
+	lightIconRightSrc?: ImageMetadata
+	lightIconLeftSrc?: ImageMetadata
+}
+
+const { theme, link, title, lightIconLeftSrc, lightIconRightSrc, darkIconRightSrc, darkIconLeftSrc } = Astro.props
+---
+
+<a
+	href={link}
+	class="flex items-center justify-center gap-1"
+	class:list={[{ 'button-dark': theme === 'light' }, { 'button-light': theme === 'dark' }]}
+>
+	{
+		lightIconLeftSrc && theme === 'dark' && (
+			<Image src={lightIconLeftSrc} alt={title} width={16} height={16} class="hidden md:block" />
+		)
+	}
+	{
+		darkIconLeftSrc && theme === 'light' && (
+			<Image src={darkIconLeftSrc} alt={title} width={16} height={16} class="hidden md:block" />
+		)
+	}
+	<span>{title}</span>
+	{
+		lightIconRightSrc && theme === 'dark' && (
+			<Image src={lightIconRightSrc} alt={title} width={16} height={16} class="hidden md:block" />
+		)
+	}
+	{
+		darkIconRightSrc && theme === 'light' && (
+			<Image src={darkIconRightSrc} alt={title} width={16} height={16} class="hidden md:block" />
+		)
+	}
+</a>
+
+<style>
+	.button-dark {
+		@apply cursor-pointer rounded-2xl px-4 py-2 text-label-2-medium text-black transition md:opacity-50 md:hover:bg-black/5 md:hover:opacity-100;
+
+		& span {
+			@apply text-black;
+		}
+	}
+
+	.button-light {
+		@apply cursor-pointer rounded-2xl px-4 py-2 text-label-2-medium transition md:opacity-50 md:hover:bg-white/5 md:hover:opacity-100;
+
+		& span {
+			@apply text-white;
+		}
+	}
+</style>
