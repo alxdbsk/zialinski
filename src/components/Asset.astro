@@ -1,18 +1,7 @@
 ---
-interface Props {
-	ratio?: 'video' | 'square'
-	maxWidth?: number
-}
 
-const { ratio, maxWidth } = Astro.props
-
-const widthClass = maxWidth ? `max-w-[${maxWidth}px]` : ''
-const aspectRatioClass = ratio ? `aspect-${ratio}` : 'aspect-auto'
 ---
 
-<div
-	class="flex h-auto w-full items-center justify-center overflow-hidden rounded-[48px]"
-	class:list={[widthClass, aspectRatioClass]}
->
+<div class="flex h-auto w-full items-center justify-center overflow-hidden rounded-[48px]">
 	<slot />
 </div>

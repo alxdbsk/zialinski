@@ -2,12 +2,10 @@
 import ButtonLink from './ButtonLink.astro'
 interface Props {
 	theme: 'dark' | 'light'
-	color: string
+	gradient: string
 }
 
-const { theme, color } = Astro.props
-
-const gradient = `from-${color} to-${color}/0`
+const { theme, gradient } = Astro.props
 ---
 
 <header
