@@ -2,6 +2,7 @@
 import thinArrowRrightBlack from '../../public/icons/thin-arrow-right-black.svg'
 import thinArrowRrightWhite from '../../public/icons/thin-arrow-right-white.svg'
 import Image from 'astro/components/Image.astro'
+import Chip from './Chip.astro'
 
 export interface ICaseCard {
 	chips: string[]
@@ -20,16 +21,7 @@ const { title, link, chips } = Astro.props
 >
 	<div class="flex flex-1 flex-col">
 		<div class="mb-4 flex flex-wrap gap-1">
-			{
-				chips?.length &&
-					chips.map((chip) => {
-						return (
-							<span class="chip flex items-center justify-center rounded-20 border border-dark-grey-2 px-3 py-1.5 text-dark-grey-2 transition">
-								{chip}
-							</span>
-						)
-					})
-			}
+			{chips?.length && chips.map((chip) => <Chip chip={chip} theme="light" />)}
 		</div>
 		<span class="title text-title-1-medium transition">{title}</span>
 	</div>

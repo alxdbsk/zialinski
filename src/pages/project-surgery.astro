@@ -1,0 +1,142 @@
+---
+import GeneralLayout from '../layouts/GeneralLayout.astro'
+import ButtonLink from '../components/ButtonLink.astro'
+import Header from '../components/Header.astro'
+import thinArrowRightWhite from '../../public/icons/thin-arrow-right-white.svg'
+import Chip from '../components/Chip.astro'
+import Asset from '../components/Asset.astro'
+import Image from 'astro/components/Image.astro'
+import Photo from '../../public/images/photo.jpeg'
+import CourseVideo from '../../public/videos/courseteaser.mp4'
+
+const THEME = 'dark'
+---
+
+<GeneralLayout title="CV" bgClass="bg-red" theme={THEME}>
+	<Header theme={THEME} color="red">
+		<ButtonLink
+			link="/scribe"
+			title="Next Case"
+			theme={THEME}
+			lightIconRightSrc={thinArrowRightWhite}
+			hideIcon={true}
+		/>
+	</Header>
+
+	<div class="my-20 flex flex-col items-center gap-20">
+		<section class="flex flex-col items-center">
+			<div class="container mb-6 flex flex-wrap gap-1">
+				<Chip theme={THEME} chip="NDA" />
+			</div>
+			<div class="mb-15 container flex flex-col">
+				<p class="text-title-1-regular text-white/75">
+					<span class="text-white">Project Surgery</span>
+					developed a comprehensive web platform and AR tools to improve surgical experiences and enhance the quality and
+					efficiency of operations.
+				</p>
+			</div>
+			<div class="mb-15 flex items-center justify-center px-5">
+				<Asset ratio="video" maxWidth={1280}>
+					<video src={CourseVideo} muted loop autoplay class="max-h-full max-w-full"></video>
+				</Asset>
+			</div>
+			<div class="container flex">
+				<p class="label-1-medium text-white/70">
+					Developed a comprehensive web platform and AR tools to enhance surgical workflows, enabling surgeons to manage
+					patient data, share procedural videos, and utilize 3D models for pre-operative and intraoperative planning.
+				</p>
+			</div>
+		</section>
+
+		<section class="container flex flex-col">
+			<h3 class="mb-5 text-title-2-medium text-white">Process</h3>
+
+			<p class="border-b border-white/20 py-5 text-description-1-regular text-white/60">
+				<span class="text-white">Research & Gathering.</span>
+				Conducted in-depth user research and data analysis to identify workflow challenges, participating in ideation sessions
+				to align on effective solutions.
+			</p>
+			<p class="border-b border-white/20 py-5 text-description-1-regular text-white/60">
+				<span class="text-white">Wireframes & Prototyping.</span>
+				Created detailed wireframes and tested prototypes with a test group of surgeons, facing challenges in balancing user
+				needs with technical constraints.
+			</p>
+			<p class="border-b border-white/20 py-5 text-description-1-regular text-white/60">
+				<span class="text-white">Web Product Testing.</span>
+				Led comprehensive web testing sessions, collecting surgeon feedback to refine usability; faced the challenge of aligning
+				user feedback with feasible updates.
+			</p>
+			<p class="border-b border-white/20 py-5 text-description-1-regular text-white/60">
+				<span class="text-white">Hololens Application Testing.</span>
+				Designed and recorded pre-operative AR testing sessions, refining the interface based on user interactions and feedback.
+			</p>
+			<p class="border-b border-white/20 py-5 text-description-1-regular text-white/60">
+				<span class="text-white">UI Development & Iteration.</span>
+				Built UI components, updating the design system for consistency, and iterated designs based on insights from Hotjarand
+				user feedback.
+			</p>
+			<p class="py-5 text-description-1-regular text-white/60">
+				<span class="text-white">Collaboration & Communication.</span>
+				Maintained seamless communication with Product Managers, development teams, and QA engineers, ensuring smooth collaboration
+				despite differing technical perspectives and priorities.
+			</p>
+		</section>
+
+		<section class="container flex flex-col">
+			<h3 class="mb-5 text-title-2-medium text-white">Key Challenges</h3>
+
+			<div class="mb-15 flex flex-col justify-center">
+				<p class="mb-10 text-description-1-regular text-white/60">
+					<span class="text-white">Research & Gathering.</span>
+					Conducted in-depth user research and data analysis to identify workflow challenges, participating in ideation sessions
+					to align on effective solutions.
+				</p>
+				<Asset ratio="square">
+					<Image src={Photo} alt="Photo" />
+				</Asset>
+			</div>
+
+			<div class="mb-15 flex flex-col justify-center">
+				<p class="mb-10 text-description-1-regular text-white/60">
+					<span class="text-white">Research & Gathering.</span>
+					Conducted in-depth user research and data analysis to identify workflow challenges, participating in ideation sessions
+					to align on effective solutions.
+				</p>
+				<Asset ratio="square">
+					<Image src={Photo} alt="Photo" />
+				</Asset>
+			</div>
+
+			<div class="flex flex-col justify-center">
+				<p class="mb-10 text-description-1-regular text-white/60">
+					<span class="text-white">Research & Gathering.</span>
+					Conducted in-depth user research and data analysis to identify workflow challenges, participating in ideation sessions
+					to align on effective solutions.
+				</p>
+				<Asset ratio="square">
+					<Image src={Photo} alt="Photo" />
+				</Asset>
+			</div>
+		</section>
+
+		<section class="container flex flex-col">
+			<h3 class="mb-5 text-title-2-medium text-white">Outcomes</h3>
+
+			<p class="border-b border-white/20 py-5 text-description-1-regular text-white/60">
+				<span class="text-white">Research & Gathering.</span>
+				Conducted in-depth user research and data analysis to identify workflow challenges, participating in ideation sessions
+				to align on effective solutions.
+			</p>
+			<p class="border-b border-white/20 py-5 text-description-1-regular text-white/60">
+				<span class="text-white">Wireframes & Prototyping.</span>
+				Created detailed wireframes and tested prototypes with a test group of surgeons, facing challenges in balancing user
+				needs with technical constraints.
+			</p>
+			<p class="py-5 text-description-1-regular text-white/60">
+				<span class="text-white">Web Product Testing.</span>
+				Led comprehensive web testing sessions, collecting surgeon feedback to refine usability; faced the challenge of aligning
+				user feedback with feasible updates.
+			</p>
+		</section>
+	</div>
+</GeneralLayout>

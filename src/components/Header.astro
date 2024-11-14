@@ -2,13 +2,17 @@
 import ButtonLink from './ButtonLink.astro'
 interface Props {
 	theme: 'dark' | 'light'
+	color: string
 }
 
-const { theme } = Astro.props
+const { theme, color } = Astro.props
+
+const gradient = `from-${color} to-${color}/0`
 ---
 
 <header
-	class="sticky bottom-0 left-0 flex h-[100px] w-full justify-center bg-gradient-to-t from-white to-white/0 md:top-0 md:bg-none"
+	class="sticky bottom-0 left-0 flex h-[100px] w-full justify-center bg-gradient-to-t md:top-0 md:bg-none"
+	class:list={[gradient]}
 >
 	<div class="invisible absolute flex h-1 w-full bg-black bg-opacity-10 md:visible">
 		<div id="progressBar" class="progress-bar h-full w-0 items-center bg-dark-grey-2"></div>

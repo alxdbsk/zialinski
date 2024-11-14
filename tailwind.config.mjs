@@ -21,6 +21,7 @@ export default {
 				200: '2'
 			},
 			spacing: {
+				15: '3.75rem',
 				30: '7.5rem',
 				'100px': '100px'
 			},
