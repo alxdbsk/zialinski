@@ -8,6 +8,7 @@ interface Props {
 	link: string
 	download?: boolean
 	hideIcon?: boolean
+	target?: '_self' | '_blank'
 	darkIconLeftSrc?: ImageMetadata
 	darkIconRightSrc?: ImageMetadata
 	lightIconRightSrc?: ImageMetadata
@@ -23,7 +24,8 @@ const {
 	lightIconLeftSrc,
 	lightIconRightSrc,
 	darkIconRightSrc,
-	darkIconLeftSrc
+	darkIconLeftSrc,
+	target = '_self'
 } = Astro.props
 ---
 
@@ -31,6 +33,7 @@ const {
 	href={link}
 	class="flex items-center justify-center gap-1"
 	download={download}
+	target={target}
 	class:list={[{ 'button-dark': theme === 'light' }, { 'button-light': theme === 'dark' }]}
 >
 	{
