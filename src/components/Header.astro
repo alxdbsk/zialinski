@@ -14,8 +14,16 @@ const gradient = `from-${color} to-${color}/0`
 	class="sticky bottom-0 left-0 flex h-[100px] w-full justify-center bg-gradient-to-t md:top-0 md:bg-none"
 	class:list={[gradient]}
 >
-	<div class="invisible absolute flex h-1 w-full bg-black bg-opacity-10 md:visible">
-		<div id="progressBar" class="progress-bar h-full w-0 items-center bg-dark-grey-2"></div>
+	<div
+		class="invisible absolute flex h-1 w-full md:visible"
+		class:list={[{ 'bg-black/10': theme === 'light' }, { 'bg-white/10': theme === 'dark' }]}
+	>
+		<div
+			id="progressBar"
+			class="progress-bar h-full w-0 items-center"
+			class:list={[{ 'bg-black': theme === 'light' }, { 'bg-white': theme === 'dark' }]}
+		>
+		</div>
 	</div>
 	<div class="flex w-full max-w-[1240px] items-center justify-between px-5">
 		<ButtonLink link="/" theme={theme} title="Home" />
